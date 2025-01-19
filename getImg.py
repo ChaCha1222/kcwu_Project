@@ -14,4 +14,6 @@ headers = {
 response = requests.get(url, headers=headers)
 soup = BeautifulSoup(response.text, 'html.parser')
 
-print(soup.prettify())
+# Save the scraped content to a file
+with open('scraped_content.html', 'w', encoding='utf-8') as file:
+    file.write(soup.prettify())
